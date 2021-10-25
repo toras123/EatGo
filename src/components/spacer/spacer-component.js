@@ -1,5 +1,4 @@
 import React from 'react';
-import { View } from 'react-native';
 import styled from 'styled-components/native';
 
 const sizeVariants = {
@@ -7,10 +6,10 @@ const sizeVariants = {
   medium: 2,
   large: 3,
 };
-export const Spacer = ({ variant, direction }) => {
+export const Spacer = ({ variant, direction, children }) => {
   const SpaceVariant = styled.View`;
     margin-${direction.toLowerCase()}: ${(props) =>
     props.theme.space[sizeVariants[variant.toLowerCase()]]}
     `;
-  return <SpaceVariant />;
+  return <SpaceVariant>{children}</SpaceVariant>;
 };
